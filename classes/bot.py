@@ -6,8 +6,10 @@ from discord.ext import commands as discord_commands
 from discord import Embed
 
 import requests
+import random
 
 from .command import Command
+from .api_command import ApiCommand
 
 
 class Bot(discord_commands.Bot):
@@ -33,6 +35,7 @@ class Bot(discord_commands.Bot):
         async def send_reply(ctx, *args):
             """Sends the reply when command is executed"""
             response = command.message
+            print(response)
             users = []
             if command.uses_args:
                 for arg in args:
@@ -44,12 +47,33 @@ class Bot(discord_commands.Bot):
                 if users == []:
                     command.message = ' '
 
-            response = f'**_{users}_** {command.message} **_{ctx.author.name}_**'.replace(
+            response = f'**_{users} _**{command.message} **_{ctx.author.name}_**'.replace(
                 "'", '').replace("]", '').replace("[", '')
 
-            if command.assets != '':
-                request = requests.get(command.assets)
+            if command.assets != []:
+                request = requests.get(random.choice(command.assets))
                 image_url = request.url
                 embed = Embed(title=response, color=3447003)
                 embed.set_image(url=image_url)
                 await ctx.send(embed=embed)
+            else:
+                await ctx.send(f">>> {response}")
+
+    def listen_api_commands(self, command):
+        """Replies to commands that need to consume an api"""
+        @self.command(name=command.name)
+        async def send_reply(ctx, arg):
+            options = range(50)[4:]
+            options3 = range(300)[51:]
+            switcher = {
+                'masterpiece': random.choice([1, 2]),
+                'god': 2,
+                'nice': 3,
+                'meh': random.choice(options),
+                'zzz': random.choice(options3)
+            }
+            arg = str(switcher.get(arg))
+            response = command.get_api(arg)
+            list_range = range(50)
+            response = response['top'][random.choice(list_range)]
+            await ctx.send(response['url'])
