@@ -1,6 +1,8 @@
 """Customized commands are created here"""
 from classes.command import Command
 from classes.api_command import ApiCommand
+from classes.meme_command import MemeCommand
+from PIL import Image
 
 commands = []
 
@@ -38,8 +40,15 @@ recommend = ApiCommand("Esto es una recomendación", "recommend", [], True,
                        "Te recomienda una obra maestra",
                        "https://api.jikan.moe/v3/top/anime/")
 
+simping = MemeCommand("quiere ser ahorcado por los muslos de", "simp",
+                      [[Image.open("./assets/thigs.jpg"),
+                        Image.open("./assets/fuckgirl.jpg"),
+                        Image.open("./assets/obstucalo.png"),
+                        Image.open("./assets/omg.png")]],
+                      True, "simpea a alguien", (232, 324), (463, 396), (0,0), "")
+
 commands.extend(
-    [hug, wednesday, wakeup, attack, pat, smile, dance, mimir, recommend])
+    [hug, wednesday, wakeup, attack, pat, smile, dance, mimir, recommend, simping])
 
 HELP_TEXT = "Lista de comandos: \n\n" + \
             ''.join([f"  -{command.name} \n" for command in commands]) + \
@@ -47,6 +56,7 @@ HELP_TEXT = "Lista de comandos: \n\n" + \
 
 command_help = Command(HELP_TEXT, "ayuda", [], False,
                        "Muestra la lista de comandos")
+
 
 commands.append(command_help)
 # commands.extend([hug])

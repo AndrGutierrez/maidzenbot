@@ -11,6 +11,7 @@ yapf = "*"
 pylint = "*"
 flask = "*"
 requests = "*"
+pillow = "*"
 
 [dev-packages]
 
