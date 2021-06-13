@@ -1,6 +1,7 @@
 """Bot model"""
 
 import random
+from io import BytesIO
 import discord
 from discord.ext.commands import MemberConverter
 from discord.ext.commands.errors import MemberNotFound
@@ -8,9 +9,9 @@ from discord.ext import commands as discord_commands
 from discord import Embed
 
 import requests
-from io import BytesIO
 
 from .command import Command
+from .meme import Meme
 from .api_command import ApiCommand
 from .meme_command import MemeCommand
 
@@ -50,7 +51,7 @@ class Bot(discord_commands.Bot):
                 if users == []:
                     command.message = ' '
 
-            response = f'**_{users} _**{command.message} **_{ctx.author.name}_**'.replace(
+            response = f'**_{ctx.author.name}_**{command.message} **_{users} _**'.replace(
                 "'", '').replace("]", '').replace("[", '')
 
             if command.assets != []:
@@ -84,22 +85,26 @@ class Bot(discord_commands.Bot):
     def listen_meme_commands(self, command: MemeCommand):
         """Creates meme"""
         @self.command(name=command.name)
-        async def send_reply(ctx, arg):
+        async def send_reply(ctx, *args):
             response = command.message
+            try:
+                arg = args[0]
+            except IndexError:
+                embed = Embed(title="Tienes que mencionar a un usuario :ShioEmbarrass:", color=3447003)
+                await ctx.send(embed=embed)
             try:
                 user = await MemberConverter().convert(ctx, arg)
                 avatar_bytes = await user.avatar_url.read()
-                profilepic = [Image.open(BytesIO(avatar_bytes))]
+                profilepic = Image.open(BytesIO(avatar_bytes))
 
-                if len(command.assets) < 2:
-                    command.assets = command.assets + profilepic
+                if command.assets[0].pasted_image_size[0] <=1:
+                    image = command.put_text(ctx.author.name, user.name)
                 else:
-                    command.assets[1] = profilepic[0]
-                image = command.paste_image()
+                    image = command.paste_image(profilepic, user.name)
                 with BytesIO() as image_binary:
                     image.save(image_binary, 'PNG')
                     image_binary.seek(0)
 
-                    await ctx.send(f">>> {command.message}", file=discord.File(fp=image_binary, filename='image.png'))
+                    await ctx.send(f">>> **_{ctx.author.name}_** {command.message} **_{user.name}_**", file=discord.File(fp=image_binary, filename='image.png'))
             except MemberNotFound:
                 pass
