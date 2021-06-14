@@ -7,6 +7,7 @@ from classes.command import Command
 from classes.api_command import ApiCommand
 from classes.meme_command import MemeCommand
 from commands import commands as command_list
+from keep_alive import keep_alive
 
 load_dotenv()
 TOKEN = os.environ.get("TOKEN")
@@ -19,4 +20,5 @@ for command in command_list:
     elif type(command) == MemeCommand:
         bot.listen_meme_commands(command)
 
+keep_alive()
 bot.start_connection()
