@@ -51,7 +51,7 @@ class Bot(discord_commands.Bot):
                 if users == []:
                     command.message = ' '
 
-            response = f'**_{ctx.author.name}_**{command.message} **_{users} _**'.replace(
+            response = f'**_{ctx.author.name}_** {command.message} **_{users} _**'.replace(
                 "'", '').replace("]", '').replace("[", '')
 
             if command.assets != []:

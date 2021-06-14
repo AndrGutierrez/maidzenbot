@@ -7,41 +7,46 @@ from PIL import Image
 
 commands = []
 
-hug = Command("abraza a", "hug", ["https://imgur.com/Ty1Q5XN"], True,
+hug = Command("abraza a", "hug", ["https://i.imgur.com/Ty1Q5XN.gif", "https://i.pinimg.com/originals/7e/0d/ab/7e0dab2e79d4d508110aa56ff9970f3c.gif  "], True,
               'Abraza a un ser querido :3 (ping)')
 
 wednesday = Command("Hoy es miércoles :sunglasses:", "miercoles",
-                    ["https://imgur.com/Ty1Q5XN"], False,
+                    ["https://media.tenor.com/images/ad8b2f9769a4d2354b50299c55a2f5d3/tenor.gif"], False,
                     "Celebra los miércoles :sunglasses:")
 
 wakeup = Command("despierta al dormilón de", "wakeup",
-                 ["https://imgur.com/96UoWK2"], True,
+                 ["https://i.imgur.com/96UoWK2.gif", "http://pa1.narvii.com/6592/c6db621e46b6ed9ca2b463263b4d697b28990475_00.gif"], True,
                  "Despierta a los flojos jeje (ping)")
 
 attack = Command("ataca a", "attack", [
-    "https://imgur.com/bGBwXkF", "https://imgur.com/g1z2Bn9",
+    "https://i.imgur.com/bGBwXkF.gif", "http://akimonogatari.es/wp-content/uploads/2017/11/re1.gif",
     "https://imgur.com/F5h2SFQ"
 ], True, "Ataca a alguien (ping)")
 
 pat = Command("le da cariño a", "pat",
-              ["https://imgur.com/xeEWmyq", "https://imgur.com/RrRYsZW"], True,
+              ["https://i.kym-cdn.com/photos/images/original/001/300/413/38e.gif", "https://www.otakuwall.com/wp-content/uploads/76t554s22u661.gif"], True,
               "Das cariño a un amigo :D (ping)")
 
-smile = Command("sonrie jeje :)", "smile", ["https://imgur.com/WgChzZ7"],
+smile = Command("sonrie jeje :)", "smile", ["https://i.imgur.com/WgChzZ7.gif", "https://www.anacronico-fansub.es/wp-content/uploads/2017/09/tumblr_oukhatgbHH1qc8w4vo1_500.gif", "https://memestatic.fjcdn.com/gifs/Made_74ee26_6503893.gif", "https://memestatic.fjcdn.com/gifs/Made_74ee26_6503893.gif"],
                 False, "sonries mucho jaja :D")
 
 dance = Command("se pone a bailar :sunglasses:", "dance",
-                ["https://imgur.com/ETUfuGo"], False, "baile feliz yeee")
+                ["https://i.imgur.com/ETUfuGo.gif"], False, "baile feliz yeee")
 
-mimir = Command("se fue a mimir~", "mimir", ["https://imgur.com/rqrRNjN"],
+mimir = Command("se fue a mimir~", "mimir", ["https://i.imgur.com/rqrRNjN.gif"],
                 False, "a mimir~")
 
 yn = Command("yo opino que...", "yn",
-             ["https://imgur.com/5uhujGH", "https://imgur.com/ANioULP"], False,
+             ["https://i.imgur.com/5uhujGH.gif", "https://i.kym-cdn.com/photos/images/newsfeed/001/712/799/f68.gif"], False,
              "Decide entre sí o no")
 punish = Command("castiga a alguien que se portó muy mal", "punish",
-                 ["https://imgur.com/x6PEBz0"], True,
+                 ["https://i.imgur.com/x6PEBz0.gif", ], True,
                  "castiga a alguien (ping)")
+cry = Command("llora :(", "cry", ["https://otakustreintaneras.files.wordpress.com/2017/10/anime_74cf76_63409711.gif?w=300", "https://data.whicdn.com/images/296796968/original.gif"], False, "llora mucho :(")
+
+perdon= Command("pide perdón, meperd0nas?", "perd0n",["https://i0.wp.com/blackandyellowotakugamers.com/wp-content/uploads/2017/08/bow.gif?resize=640%2C511&ssl=1"], True, "pide clemencia (ping)")
+
+
 recommend = ApiCommand("Esto es una recomendación", "recommend", [], True,
                        "Te recomienda una obra maestra",
                        "https://api.jikan.moe/v3/top/anime/")

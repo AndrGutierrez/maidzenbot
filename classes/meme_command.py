@@ -13,7 +13,7 @@ class MemeCommand(Command):
 
     def paste_image(self, profilepic, text: str):
         """Pastes an image over other"""
-        font =ImageFont.truetype("../fonts/DroidSans.ttf", 96)
+        font =ImageFont.truetype("./fonts/DroidSans.ttf", 96)
         memes = self.assets
 
         meme = random.choice(memes)
@@ -27,7 +27,7 @@ class MemeCommand(Command):
         return canvas
     def put_text(self, user1='', user2=''):
         """Just puts text over an image"""
-        font =ImageFont.truetype("../fonts/DroidSans.ttf")
+        font =ImageFont.truetype("./fonts/DroidSans.ttf")
         memes = self.assets
         meme = random.choice(memes)
         canvas = meme.image
@@ -38,8 +38,10 @@ class MemeCommand(Command):
         while font.getsize(txt)[0] < img_fraction*canvas.size[0]:
             # iterate until the text size is just larger than the criteria
             fontsize += 1
-            font = ImageFont.truetype("../fonts/DroidSans.ttf", fontsize)
-        white = Image.open("./assets/white.png").resize((int(canvas.size[0]), fontsize +10))
+            font = ImageFont.truetype("./fonts/DroidSans.ttf", fontsize)
+        white = Image.open("./assets/white.png")
+        white = white.resize((int(canvas.size[0]), fontsize +10))
+        white.show()
         draw = ImageDraw.Draw(canvas)
         canvas.paste(white, meme.text_coordinates)
         draw.text(meme.text_coordinates, txt, "black", font=font)
