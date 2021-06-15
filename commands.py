@@ -15,19 +15,18 @@ wednesday = Command("Hoy es miércoles :sunglasses:", "miercoles",
                     "Celebra los miércoles :sunglasses:")
 
 wakeup = Command("despierta al dormilón de", "wakeup",
-                 ["https://i.imgur.com/96UoWK2.gif", "http://pa1.narvii.com/6592/c6db621e46b6ed9ca2b463263b4d697b28990475_00.gif"], True,
+                 ["https://i.imgur.com/96UoWK2.gif", "http://pa1.narvii.com/6592/c6db621e46b6ed9ca2b463263b4d697b28990475_00.gif", "https://64.media.tumblr.com/ffeed007f14af59e83a5e961cfc374a6/tumblr_osr3irofU11s4qvrdo1_540.gifv"], True,
                  "Despierta a los flojos jeje (ping)")
 
 attack = Command("ataca a", "attack", [
-    "https://i.imgur.com/bGBwXkF.gif", "http://akimonogatari.es/wp-content/uploads/2017/11/re1.gif",
-    "https://imgur.com/F5h2SFQ"
+    "https://i.imgur.com/bGBwXkF.gif", "http://akimonogatari.es/wp-content/uploads/2017/11/re1.gif", "https://cdn.discordapp.com/attachments/791760928319471646/840697035179032606/assets_piedras.gif", "https://cdn.discordapp.com/attachments/791760928319471646/840696872938111006/assets_atack.gif"
 ], True, "Ataca a alguien (ping)")
 
 pat = Command("le da cariño a", "pat",
               ["https://i.kym-cdn.com/photos/images/original/001/300/413/38e.gif", "https://www.otakuwall.com/wp-content/uploads/76t554s22u661.gif"], True,
               "Das cariño a un amigo :D (ping)")
 
-smile = Command("sonrie jeje :)", "smile", ["https://i.imgur.com/WgChzZ7.gif", "https://www.anacronico-fansub.es/wp-content/uploads/2017/09/tumblr_oukhatgbHH1qc8w4vo1_500.gif", "https://memestatic.fjcdn.com/gifs/Made_74ee26_6503893.gif", "https://memestatic.fjcdn.com/gifs/Made_74ee26_6503893.gif"],
+smile = Command("sonrie jeje :)", "smile", ["https://i.imgur.com/WgChzZ7.gif", "https://www.anacronico-fansub.es/wp-content/uploads/2017/09/tumblr_oukhatgbHH1qc8w4vo1_500.gif"],
                 False, "sonries mucho jaja :D")
 
 dance = Command("se pone a bailar :sunglasses:", "dance",
@@ -58,7 +57,7 @@ chadvsvirgin = MemeCommand("el chad vs el virgen", "virgin",
                            memes["chadvsvirgin"], True, "god vs zzz")
 
 commands.extend([
-    hug, wednesday, wakeup, attack, pat, smile, dance, mimir, simping, punish,
+    hug, wednesday, wakeup, attack, pat, smile, dance, mimir, simping, punish, perdon, cry,
     yn, chadvsvirgin, recommend
 ])
 

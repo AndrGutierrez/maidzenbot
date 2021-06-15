@@ -19,7 +19,10 @@ class MemeCommand(Command):
         meme = random.choice(memes)
         canvas = meme.image
         image = profilepic.resize(meme.pasted_image_size)
-
+        white = Image.open("./assets/white.png")
+        white = white.resize((int(canvas.size[0]),106))
+        draw = ImageDraw.Draw(canvas)
+        canvas.paste(white, meme.text_coordinates)
         canvas.paste(image, meme.pasted_image_coordinates)
 
         draw = ImageDraw.Draw(canvas)
