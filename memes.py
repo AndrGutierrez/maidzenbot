@@ -5,6 +5,7 @@ memes = {}
 
 thigs = Meme((232, 324), (463, 396), (-1000,-1000), './assets/thigs.jpg')
 omg = Meme((1100, 700), (600, 600), (770,1010), './assets/omg.png')
+supremacy = Meme((100, 80),  (100, 100), (250,90), './assets/supremacy.jpg')
 fuckgirl = Meme((550, 450), (400, 400), (-1000,-1000), './assets/fuckgirl.jpg')
 obstucalo = Meme((0, 162), (500, 350), (-1000,-1000), './assets/obstucalo.png')
 

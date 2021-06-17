@@ -28,6 +28,8 @@ class Bot(discord_commands.Bot):
         @self.event
         async def on_ready():
             print(f"{self.user} has connected to discord")
+            state = discord.Custom("%ayuda")
+            await self.change_presence(status=discord.Status.online, activity=state)
 
         try:
             self.run(self.__token)
