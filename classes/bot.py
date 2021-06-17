@@ -28,8 +28,7 @@ class Bot(discord_commands.Bot):
         @self.event
         async def on_ready():
             print(f"{self.user} has connected to discord")
-            discord.Activity(name="Test", type=5)
-
+            await self.change_presence(activity=discord.Game('%ayuda'))
         try:
             self.run(self.__token)
         except ConnectionError:
