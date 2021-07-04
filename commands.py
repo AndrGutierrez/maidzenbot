@@ -9,17 +9,19 @@ commands = []
 
 hug = Command("abraza a", "hug", [
     "https://i.imgur.com/Ty1Q5XN.gif",
-    "https://i.pinimg.com/originals/7e/0d/ab/7e0dab2e79d4d508110aa56ff9970f3c.gif  "
+    "https://64.media.tumblr.com/8cde4ff91b05d7bb05d2de098301df81/tumblr_prq79gqPgB1qbvovho1_540.gif"
 ], True, 'Abraza a un ser querido :3 (ping)')
 
+nanachips = Command("ñam", "nanachips", ["https://media1.tenor.com/images/997a98902a624bb0f69f6305a35deff0/tenor.gif?itemid=15583069"], False, "nanachips yeee")
+siri = Command("*Gravando ó vídeo mais incrível do mundo um siri fazendo barra, Vamos seu siri!!! diz-me seu depoimento uff uff uff sui shiu fui shiu*", "siri", ["https://media1.tenor.com/images/035bb316bb35f3457c9eee602cfc50b9/tenor.gif?itemid=20383412"], False, "VAMOS SEU SIRI")
 wednesday = Command("Hoy es miércoles :sunglasses:", "miercoles", [
     "https://media.tenor.com/images/ad8b2f9769a4d2354b50299c55a2f5d3/tenor.gif"
 ], False, "Celebra los miércoles :sunglasses:")
-
+jueves = Command("Feliz jueves!", "jueves", ["https://i.pinimg.com/originals/04/07/73/04077344d6dae511fe78e62d035ee454.gif", "https://media.tenor.com/images/490f2aeb7b9a6ca6541992db084724d9/tenor.gif"], False, "Feliz jueves dijo la feliz jueves")
 wakeup = Command("despierta al dormilón de", "wakeup", [
     "https://i.imgur.com/96UoWK2.gif",
     "http://pa1.narvii.com/6592/c6db621e46b6ed9ca2b463263b4d697b28990475_00.gif",
-    "https://64.media.tumblr.com/ffeed007f14af59e83a5e961cfc374a6/tumblr_osr3irofU11s4qvrdo1_540.gifv"
+    "https://64.media.tumblr.com/ffeed007f14af59e83a5e961cfc374a6/tumblr_osr3irofU11s4qvrdo1_540.gif"
 ], True, "Despierta a los flojos jeje (ping)")
 
 attack = Command("ataca a", "attack", [
@@ -47,7 +49,7 @@ mimir = Command("se fue a mimir~", "mimir",
 
 yn = Command("yo opino que...", "yn", [
     "https://i.imgur.com/5uhujGH.gif",
-    "https://i.kym-cdn.com/photos/images/newsfeed/001/712/799/f68.gif"
+    "https://media1.tenor.com/images/eee8cc83485174e255186afb8b948c9a/tenor.gif?itemid=14004596"
 ], False, "Decide entre sí o no")
 punish = Command("castiga a alguien que se portó muy mal", "punish", [
     "https://i.imgur.com/x6PEBz0.gif",
@@ -73,7 +75,7 @@ chadvsvirgin = MemeCommand("el chad vs el virgen", "virgin",
 
 commands.extend([
     hug, wednesday, wakeup, attack, pat, smile, dance, mimir, simping, punish,
-    perdon, cry, yn, chadvsvirgin, recommend
+    perdon, cry, yn, chadvsvirgin, recommend, siri, nanachips, jueves
 ])
 
 HELP_TEXT = "Lista de comandos: \n\n" + \
