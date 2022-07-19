@@ -36,6 +36,7 @@ dance = Command("se pone a bailar :sunglasses:", "dance",
 
 mimir = Command("se fue a mimir~", "mimir", ["https://imgur.com/rqrRNjN"],
                 False, "a mimir~")
+spawn = Command("* Entra épicamente al chat *", "spawn", ["https://media.discordapp.net/attachments/790362546049515551/998766590281650227/bondrewd-madeinabyss.gif"], False, "Entra con estilo")
 
 recommend = ApiCommand("Esto es una recomendación", "recommend", [], True,
                        "Te recomienda una obra maestra",
@@ -46,7 +47,7 @@ simping = MemeCommand("tiene pensamientos impuros sobre", "simp",
 
 chadvsvirgin = MemeCommand("el chad vs el virgen", "virgin", memes["chadvsvirgin"], True, "god vs zzz")
 commands.extend(
-    [hug, wednesday, wakeup, attack, pat, smile, dance, mimir, simping, chadvsvirgin, recommend])
+    [hug, wednesday, wakeup, attack, pat, smile, dance, mimir, simping, chadvsvirgin, recommend, spawn])
 
 HELP_TEXT = "Lista de comandos: \n\n" + \
             ''.join([f"  -{command.name} \n" for command in commands]) + \
